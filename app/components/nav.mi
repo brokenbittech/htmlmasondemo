@@ -1,0 +1,19 @@
+
+<nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+
+<%perl>
+my @items =
+ ( { name => 'Home',   icon => 'home', uri => '/index.html' }
+ , { name => 'Project Plan',  icon => 'list', uri => "/pages/project.html" }
+ , { name => 'Time Log', icon => 'watch', uri => "/pages/timelog.html"}
+ );
+</%perl>
+
+
+
+% foreach my $item (@items) {
+  <& ./nav_item.mi, %{$item} &>
+% };
+
+<div class="mdl-layout-spacer"></div>
+</nav>

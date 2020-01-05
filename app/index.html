@@ -1,0 +1,29 @@
+<%perl>
+  my @cards = (
+    { title   => '<img src="https://orly-appstore.herokuapp.com/generate?title=HTML%3A%3AMason&top_text=Demonstration%20project%20for%20WebCDR&author=Lowell%20Hamilton&image_code=16&theme=12&guide_text=A%20learning%20adventure&guide_text_placement=bottom_right" height="400"/>'
+    , content => ['A demonstration project for WebCDR by Lowell Hamilton']
+    , color   => 'teal'
+    , width   => 8
+    , type    => 'bighead'
+    , actions =>
+      [ { url => '/pages/project.html'
+        , icon => 'book'
+        , text => 'Read More'
+        }
+      , { url => 'https://www.github.com/brokenbittech/htmlmasondemo'
+        , icon => 'code',
+        , text => 'GitHub Repo'
+        }
+      ]
+    , checkboxlist => []
+    }
+  );
+
+</%perl>
+<div class="demo-cards mdl-grid">
+<div class="demo-separator mdl-cell--2-col"></div>
+% foreach my $card (@cards) {
+  <& ./components/md_card.mi, %{$card} &>
+% }
+
+</div>

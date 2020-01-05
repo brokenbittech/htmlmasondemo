@@ -1,0 +1,33 @@
+
+<%init>
+use LWP::JSON::Tiny;
+</%init>
+
+
+<%method chuck_norris>
+<%perl>
+# my $apiurl = 'http://api.icndb.com/jokes/random/?limitTo=nerdy';
+
+# my $chuck_norris = LWP::UserAgent::JSON
+  # ->new()
+  # ->request(HTTP::Request::JSON->new(GET => $apiurl))
+  # ->json_content->{'value'}->{'joke'};
+my $chuck_norris = 'DOWN FOR NOW';
+</%perl>
+<% $chuck_norris %>
+</%method>
+
+
+      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title chuck-norris"><& SELF:chuck_norris &></span>
+          <div class="mdl-layout-spacer"></div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+            <li class="mdl-menu__item"><a href="/contact.html" class="mdl-button">Contact</a></li>
+
+          </ul>
+        </div>
+      </header>
