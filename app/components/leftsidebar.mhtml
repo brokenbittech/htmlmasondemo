@@ -1,0 +1,9 @@
+<div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+  <header class="demo-drawer-header">
+    <img src="https://robohash.org/<% time() %>" class="demo-avatar" alt="Random Robot Avatar" />
+      <div class="mdl-layout-spacer"></div>
+      <span>Welcome WebCDR!</span>
+  </header>
+
+<& ./nav.mhtml &>
+</div>

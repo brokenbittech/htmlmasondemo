@@ -12,8 +12,8 @@ body {
 
 }
 .demo-avatar {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 64px;
 }
 .demo-layout .mdl-layout__header .mdl-layout__drawer-button {
@@ -86,6 +86,12 @@ body {
   font-size: 24px;
   font-weight: 400;
 }
+
+.mdl-card__title-text {
+  width: 100%;
+  justify-content: center;
+}
+
 .demo-cards ul {
   padding: 0;
 }

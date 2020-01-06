@@ -1,7 +1,7 @@
 <body>
   <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <& ./header.mi &>
-    <& ./leftsidebar.mi &>
-    <& ./content.mi &>
+    <& ./header.mhtml &>
+    <& ./leftsidebar.mhtml &>
+    <& ./content.mhtml &>
   </div>
 </body>

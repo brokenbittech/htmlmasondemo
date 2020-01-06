@@ -29,9 +29,9 @@ $text
 $list
 </%args>
 <div class="mdl-list">
-% foreach my $item (@{$list}) {
+% foreach my $item ( @{$list} ) {
 <& .checkboxitem, %{$item} &>
-% };
+% }
 </%def>
 
 
@@ -42,8 +42,8 @@ $name
 $tooltip => undef
 </%args>
 <%init>
-  my $completeicon = $complete ? 'check_circle' : 'clear';
-  my $ttid = Digest::MD5::md5($name);
+my $completeicon = $complete ? 'check_circle' : 'clear';
+my $ttid         = Digest::MD5::md5($name);
 </%init>
 
   <div class="mdl-list__item">
@@ -55,7 +55,7 @@ $tooltip => undef
         <% $name %>
       </span>
     </span>
-% if ($tooltip ne "") {
+% if ( $tooltip ne "" ) {
     <i id="tt-<% $ttid %>" class="material-icons">chat_bubble_outline</i>
     <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="tt-<% $ttid %>"><% $tooltip %></div>
 % }
@@ -75,23 +75,23 @@ $tooltip => undef
   </div>
   <div class="mdl-card__supporting-text mdl-color-text--grey-600">
 
-% if ($type eq 'bighead') {
-    <% join('', @content) %>
-% } elsif ($type eq 'checkboxlist') {
+% if ( $type eq 'bighead' ) {
+    <% join( '', @content ) %>
+% } elsif ( $type eq 'checkboxlist' ) {
   <& .checkboxlist, list => \@content &>
 % }
   </div>
 
 
 
-% if ( @actions) {
-% print STDERR Data::Dumper::Dumper(\@actions);
+% if (@actions) {
+%     print STDERR Data::Dumper::Dumper( \@actions );
   <div class="mdl-card__actions mdl-card--border">
-% foreach my $action (@actions) {
+%     foreach my $action (@actions) {
     <& .action_item, %{$action} &>
-% };  # end foreach actions
+%     };    # end foreach actions
   </div>
-% };  # end if actions
+% };    # end if actions
 
 
   </div>

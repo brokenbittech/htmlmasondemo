@@ -1,0 +1,18 @@
+<%once>
+  use LWP::JSON::Tiny;
+</%once>
+
+
+<%perl>
+  my $apiurl = 'http://api.icndb.com/jokes/random/?limitTo=nerdy';
+
+  my $res = LWP::UserAgent::JSON
+    ->new()
+    ->request( HTTP::Request::JSON->new( GET => $apiurl ) );
+
+  my $chuck_norris = $res->json_content
+    ? $res->json_content->{'value'}->{'joke'}
+    : 'Chuck Norris joke goes here, but the API was drop kicked too many times and it failed';
+
+</%perl>
+<% $chuck_norris %>

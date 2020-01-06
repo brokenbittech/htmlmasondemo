@@ -1,8 +1,12 @@
 # app.psgi
-use strict;
+use common::sense;
 use HTML::Mason::PSGIHandler;
 use Digest::MD5;
 use Data::Dumper;
+
+use LWP::JSON::Tiny;
+use lib $ENV{PWD};
+use Demo::Schema;
 
 my $h = HTML::Mason::PSGIHandler->new(
     comp_root => "/home/broken-bit/work/htmlmason/app", # required
@@ -11,8 +15,6 @@ my $h = HTML::Mason::PSGIHandler->new(
 
 my $handler = sub {
     my $env = shift;
-    warn "Starting request... to ". $env->{'REQUEST_URI'};
-    # warn Dumper($env);
-
+    print STDERR "\n--- Starting request... to ". $env->{'REQUEST_URI'} . "\n";
     $h->handle_psgi($env);
 };

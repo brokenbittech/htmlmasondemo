@@ -1,0 +1,5 @@
+<%init>
+my $db   = Demo::Schema->new_connection();
+my @rows = $db->resultset('timelog')
+  ->search( { deleted => 0 }, { order_by('entry_date ASC') } )->all;
+</%init>

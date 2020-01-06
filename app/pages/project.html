@@ -1,109 +1,109 @@
 
 <%perl>
-my @cards =
-  ( { title   => 'Project Goals'
-    , color   => 'blue-grey'
-    , content =>
-      [ { complete => 1
-        , name => 'Demonstrate ability to learn quickly'
-        , tooltip => 'I had never used HTML::Mason before, but I picked this up and built this application over a weekend.'
-        }
-      , { complete => 1
-        , name => 'Learn HTML::Mason'
-        , tooltip => 'A requirement for this position with WebCDR'
-        }
-      , { complete => 0
-        , name => 'Demonstrate project/task planning ability'
-        , tooltip => 'This project was run like any project I would run -- a quick goal list, research, determination of MVP, fast proof of concept build to ensure viability of design, complete stories, fine-tune, etc......'
-        }
-      , { complete => 1
-        , name => 'Demonstrate code quality'
-        , tooltip => 'Comma-first for data structure layouts will be missed using a "standard" Perl style guide, but is included here'
-        }
-      , { complete => 0
-        , name => 'GitHub repo to share with WebCDR'
-        }
-      , { complete => 0
-        , name => 'Hosted copy of the app for reviewing in a brower without the risk of locally installing by reviewer'
-        }
-      ]
-    , type    => 'checkboxlist'
-    }
-  , { type => 'checkboxlist',
-    , title => 'Minimum Viable Product'
-    , color   => 'teal'
-    , content =>
-      [ { complete => 1
-        , name => 'Working Multi-Page HTML server-side rendered site'
-        }
-      , { complete => 1
-        , name => 'Material Design modern look'
-        , tooltip => 'I used Material Design Lite, a quick and dirty CDN delivered CSS/JS package'
-        }
-      , { complete => 1
-        , name => 'At least (1) external API call'
-        , tooltip => 'Chuck Norris technical quotes seem fitting'
-        }
-      , { complete => 0
-        , name => 'At least (1) Database-driven element'
-        , tooltip => 'I will log my time in a CSV and display that with DBIx::Class'
-        }
-      , { complete => 0
-        , name => 'At least (1) data grid'
-        , tooltip => 'Time display in a grid from the CSV db -- might not be complex enough or a good demo'
-        }
-      , { complete => 0
-        , name => 'At least (1) form with validation'
-        , tooltip => 'Time submission tool?'
-        }
-      , { complete => 0
-        , name => 'Basic testing suite'
-        , tooltip => 'Not sure how to test Mason too deeply beyond a compile check'
-        }
-      ]
-    }
-  , { type => 'checkboxlist',
-    , title => 'Stretch Goals'
-    , color => 'orange'
-    , content =>
-      [ { complete => 0
-        , name => 'Toast message highlghting the features of each page'
-        , tooltip => 'First priority stretch since it gives an idea of what is going on without having to look at the code, which nobody may ever do'
-        }
-      , { complete => 0
-        , name => 'View source icons for components/pages'
-        , tooltip => 'Modal popup with syntax highlighting?'
-        }
-      , { complete => 0
-        , name => 'Containerize application'
-        , tooltip => 'Docker container for the starman backend'
-        }
-      , { complete => 0
-        , name => 'Continuous integration pipeline'
-        , tooltip => 'Github hooks cost money now -- I will probably use AWS CodePipeline, maybe get Selenium involved'
-        }
-      , { complete => 0
-        , name => 'Code quality in CI pipiline'
-        , tooltip => 'This might be hard because of how mason works'
-        }
-      , { complete => 0
-        , name => 'AWS deployment of container to EKS with RDS database?  I may use RDS Oracle for closer to WebCDRs requirements'
-        }
-      , { complete => 0
-        , name => 'Continuous deployment pipeline with AWS CodePipeline'
-        , tooltip => 'AWS CodeDeploy'
-        }
-      , { complete => 0
-        , name => 'React+Catalyst version of the same site to show off'
-        , tooltip => 'MaterialUI is easier to use, with formik, and REST api'
-        }
-      ]
-    }
-  );
+  my @cards =
+    ( { title => 'Project Goals'
+          , color => 'blue-grey'
+          , content =>
+            [ { complete => 1
+                  , name => 'Demonstrate ability to learn quickly'
+                  , tooltip => 'I had never used HTML::Mason before, but I picked this up and built this application over a weekend.'
+              }
+              , { complete => 1
+                  , name    => 'Learn HTML::Mason'
+                  , tooltip => 'A requirement for this position with WebCDR'
+              }
+              , { complete => 0
+                  , name => 'Demonstrate project/task planning ability'
+                  , tooltip => 'This project was run like any project I would run -- a quick goal list, research, determination of MVP, fast proof of concept build to ensure viability of design, complete stories, fine-tune, etc......'
+              }
+              , { complete => 1
+                  , name => 'Demonstrate code quality'
+                  , tooltip => 'Comma-first for data structure layouts will be missed using a "standard" Perl style guide, but is included here'
+              }
+              , { complete => 1
+                  , name => 'GitHub repo to share with WebCDR'
+              }
+              , { complete => 0
+                  , name => 'Hosted copy of the app for reviewing in a brower without the risk of locally installing by reviewer'
+              }
+            ]
+          , type => 'checkboxlist'
+      }
+      , { type => 'checkboxlist',
+          , title => 'Minimum Viable Product'
+          , color => 'teal'
+          , content =>
+            [ { complete => 1
+                  , name => 'Working Multi-Page HTML server-side rendered site'
+              }
+              , { complete => 1
+                  , name => 'Material Design modern look'
+                  , tooltip => 'I used Material Design Lite, a quick and dirty CDN delivered CSS/JS package'
+              }
+              , { complete => 1
+                  , name    => 'At least (1) external API call'
+                  , tooltip => 'Chuck Norris technical quotes seem fitting'
+              }
+              , { complete => 0
+                  , name => 'At least (1) Database-driven element'
+                  , tooltip => 'I will log my time in a CSV and display that with DBIx::Class'
+              }
+              , { complete => 0
+                  , name => 'At least (1) data grid'
+                  , tooltip => 'Time display in a grid from the CSV db -- might not be complex enough or a good demo'
+              }
+              , { complete => 0
+                  , name    => 'At least (1) form with validation'
+                  , tooltip => 'Time submission tool?'
+              }
+              , { complete => 0
+                  , name => 'Basic testing suite'
+                  , tooltip => 'Not sure how to test Mason too deeply beyond a compile check'
+              }
+            ]
+      }
+      , { type => 'checkboxlist',
+          , title => 'Stretch Goals'
+          , color => 'orange'
+          , content =>
+            [ { complete => 0
+                  , name => 'Toast message highlghting the features of each page'
+                  , tooltip => 'First priority stretch since it gives an idea of what is going on without having to look at the code, which nobody may ever do'
+              }
+              , { complete => 0
+                  , name    => 'View source icons for components/pages'
+                  , tooltip => 'Modal popup with syntax highlighting?'
+              }
+              , { complete => 0
+                  , name    => 'Containerize application'
+                  , tooltip => 'Docker container for the starman backend'
+              }
+              , { complete => 0
+                  , name => 'Continuous integration pipeline'
+                  , tooltip => 'Github hooks cost money now -- I will probably use AWS CodePipeline, maybe get Selenium involved'
+              }
+              , { complete => 0
+                  , name    => 'Code quality in CI pipiline'
+                  , tooltip => 'This might be hard because of how mason works'
+              }
+              , { complete => 0
+                  , name => 'AWS deployment of container to EKS with RDS database?  I may use RDS Oracle for closer to WebCDRs requirements'
+              }
+              , { complete => 0
+                  , name => 'Continuous deployment pipeline with AWS CodePipeline'
+                  , tooltip => 'AWS CodeDeploy'
+              }
+              , { complete => 0
+                  , name => 'React+Catalyst version of the same site to show off'
+                  , tooltip => 'MaterialUI is easier to use, with formik, and REST api'
+              }
+            ]
+      }
+    );
 </%perl>
 
 
 <div class="demo-cards mdl-grid">
 % foreach my $card (@cards) {
-  <& /components/md_card.mi, %{$card} &>
+  <& /components/md_card.mhtml, %{$card} &>
 % }
