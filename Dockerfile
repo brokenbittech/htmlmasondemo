@@ -8,8 +8,8 @@ COPY cpanfile /htmlmasondemo
 COPY cpanfile.snapshot /htmlmasondemo
 RUN carton install
 
-# RUN apt remove build-essential
+RUN apt remove build-essential -y
 
 COPY . /htmlmasondemo
-ENTRYPOINT [ "run.sh" ]
+ENTRYPOINT [ "./run.sh" ]
 EXPOSE 3001

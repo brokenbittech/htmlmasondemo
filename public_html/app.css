@@ -1,6 +1,3 @@
-% $r->header_out('Content-Type', 'text/css');
-
-
 html,
 body {
   font-family: "Roboto", "Helvetica", sans-serif;

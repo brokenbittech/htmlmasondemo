@@ -3,9 +3,9 @@
 
 <%perl>
   my @items =
-    ( { name => 'Home', icon => 'home', uri => '/index.html' }
-      , { name => 'Project Plan', icon => 'list', uri => "/pages/project.html" }
-      , { name => 'Time Log', icon => 'watch', uri => "/pages/timelog.html" }
+    ( { name => 'Home', icon => 'home', uri => '/pages/index.html' },
+      { name => 'Project Plan', icon => 'list', uri => "/pages/project.html" },
+      { name => 'Time Log', icon => 'watch', uri => "/pages/timelog.html" }
     );
 </%perl>
 

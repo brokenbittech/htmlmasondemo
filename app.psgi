@@ -9,8 +9,8 @@ use lib $ENV{PWD};
 use Demo::Schema;
 
 my $h = HTML::Mason::PSGIHandler->new(
-    comp_root => "/home/broken-bit/work/htmlmason/app", # required
-    data_dir => "/home/broken-bit/work/htmlmason/data_dir",
+    comp_root => "/htmlmasondemo/app", # required
+    data_dir  => "/htmlmasondemo/data_dir",
 );
 
 my $handler = sub {
