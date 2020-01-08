@@ -19,13 +19,36 @@
                   , text => 'Contact'
               }
             ]
-          , checkboxlist => []
+      },
+      { title => 'Features!'
+          , color => 'blue-grey'
+          , type => 'checkboxlist'
+          , width => 6,
+          , content =>
+            [ { complete => 1
+                  , name => 'Built in HTML::Mason with reusable components'
+              }
+              , { complete => 1
+                  , name    => 'Random Chuck Norris quotes from an API'
+              }
+              , { complete => 1
+                  , name => 'Random robot avatar'
+              }
+              , { complete => 1
+                  , name => 'A shakey database-driven page'
+              }
+              , { complete => 1
+                  , name => 'Containerized in Docker and deployed to AWS ECS/Fargate'
+              }
+            ]
       }
+
   );
 
 </%perl>
+
+
 <div class="demo-cards mdl-grid">
-<div class="demo-separator mdl-cell--2-col"></div>
 % foreach my $card (@cards) {
   <& /components/md_card.mhtml, %{$card} &>
 % }

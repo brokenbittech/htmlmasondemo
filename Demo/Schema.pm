@@ -1,30 +1,26 @@
 package Demo::Schema;
 
+use common::sense;
 use Moose;
-use base qw/DBIx::Class::Core/;
+use namespace::autoclean;
+use base qw/DBIx::Class::Schema/;
 
-## Overrides the stock insert to be sure we are in a transaction
-sub insert {
+my $DB_FILE = "./cdr.db";
+
+__PACKAGE__->load_namespaces( result_namespace => '+Demo::Schema::Result' );
+
+sub get_connection {
   my $self = shift;
-  $self->result_source->storage->transaction_depth > 0
-    || $self->throw_exception("INSERT while not in a txn()");
-  return $self->SUPER::insert(@_);
+  my $conn = __PACKAGE__->connect( "dbi:SQLite:$DB_FILE");
+
+  # create the db file if missing
+  if (not -e $DB_FILE) {
+    $conn->deploy();
+  }
+
+  return $conn;
 }
 
-## Overrides the stock update to be sure we are in a transaction
-sub update {
-  my $self = shift;
-  $self->result_source->storage->transaction_depth > 0
-    || $self->throw_exception("UPDATE while not in a txn()");
-  return $self->SUPER::update(@_);
-}
-
-## Overrides the stock delete to be sure we are in a transaction
-sub delete {
-  my $self = shift;
-  $self->result_source->storage->transaction_depth > 0
-    || $self->throw_exception("DELETE while not in a txn()");
-  return $self->SUPER::delete(@_);
-}
+__PACKAGE__->meta->make_immutable;
 
 1;  # Be excellent to one another

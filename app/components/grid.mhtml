@@ -1,0 +1,47 @@
+<%once>
+use Scalar::Util;
+</%once>
+
+
+<%args>
+@header
+@data
+</%args>
+
+
+<%def .head>
+<%args>
+@cols
+</%args>
+
+<thead>
+    <tr>
+% foreach my $col (@cols) {
+      <th class="mdl-data-table__cell--non-numeric"><% $col %></th>
+% }
+    </tr>
+  </thead>
+</%def>
+
+
+
+<%def .row>
+<%args>
+@data
+</%args>
+% foreach my $cell (@data) {
+%
+  <td class="mdl-data-table__cell<% Scalar::Util::looks_like_number($cell) ? '' : '--non-numeric' %>"><% $cell %></td>
+% }
+</%def>
+
+
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+<& .head, cols => \@header &>
+
+% foreach my $row (@data) {
+<tr>
+<& .row, data => $row &>
+</tr>
+% }

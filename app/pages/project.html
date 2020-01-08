@@ -12,7 +12,7 @@
                   , name    => 'Learn HTML::Mason'
                   , tooltip => 'A requirement for this position with WebCDR'
               }
-              , { complete => 0
+              , { complete => 1
                   , name => 'Demonstrate project/task planning ability'
                   , tooltip => 'This project was run like any project I would run -- a quick goal list, research, determination of MVP, fast proof of concept build to ensure viability of design, complete stories, fine-tune, etc......'
               }
@@ -23,8 +23,9 @@
               , { complete => 1
                   , name => 'GitHub repo to share with WebCDR'
               }
-              , { complete => 0
-                  , name => 'Hosted copy of the app for reviewing in a brower without the risk of locally installing by reviewer'
+              , { complete => 1
+                  , name => 'Hosted copy of the app for reviewing in a browser without the risk of locally installing by reviewer'
+                  , tooltip => 'Docker-compse deployed to AWS EC2 and DNS setup to http://webcdr.sl4ck.com.   It takes a whole different set of container configurations and some python code to deploy to ECS/Fargate, but that would be my ideal.'
               }
             ]
           , type => 'checkboxlist'
@@ -44,21 +45,21 @@
                   , name    => 'At least (1) external API call'
                   , tooltip => 'Chuck Norris technical quotes seem fitting'
               }
-              , { complete => 0
-                  , name => 'At least (1) Database-driven element'
-                  , tooltip => 'I will log my time in a CSV and display that with DBIx::Class'
+              , { complete => 1
+                  , name => 'At least (1) Database-driven element',
+                  , tooltip => 'Display earthquake data from SQLite'
               }
-              , { complete => 0
+              , { complete => 1
                   , name => 'At least (1) data grid'
-                  , tooltip => 'Time display in a grid from the CSV db -- might not be complex enough or a good demo'
+                  , tooltip => 'Earthquake data in a grid -- probaby won\'t have time to make the grid interactive'
               }
               , { complete => 0
                   , name    => 'At least (1) form with validation'
-                  , tooltip => 'Time submission tool?'
+                  , tooltip => 'Grid sorting?  Grid Searching?'
               }
               , { complete => 0
                   , name => 'Basic testing suite'
-                  , tooltip => 'Not sure how to test Mason too deeply beyond a compile check'
+                  , tooltip => 'Not sure how to test Mason beyond a compile check'
               }
             ]
       }
@@ -74,9 +75,9 @@
                   , name    => 'View source icons for components/pages'
                   , tooltip => 'Modal popup with syntax highlighting?'
               }
-              , { complete => 0
+              , { complete => 1
                   , name    => 'Containerize application'
-                  , tooltip => 'Docker container for the starman backend'
+                  , tooltip => 'Docker container for the starman backend and nginx frontend running under docker-compose.'
               }
               , { complete => 0
                   , name => 'Continuous integration pipeline'

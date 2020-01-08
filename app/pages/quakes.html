@@ -1,0 +1,17 @@
+<%init>
+my $db = Demo::Schema->get_connection();
+my $rs = $db->resultset('quakes')->search(
+    \["CAST(year as INTEGER) > 2010"],
+    { order_by => ['I_D ASC'], rows => 100 }
+);
+my @headers = qw/YEAR MONTH DAY INTENSITY COUNTRY STATE /;
+my @data;
+while ( my $row = $rs->next() ) {
+    my @rowdata = map( $row->get_column($_), @headers );
+    push @data, \@rowdata;
+}
+</%init>
+
+<h2>Earthquakes! </h2>
+
+<& /components/grid.mhtml, header => \@headers, data => \@data &>

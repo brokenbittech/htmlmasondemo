@@ -5,14 +5,28 @@
   my @items =
     ( { name => 'Home', icon => 'home', uri => '/pages/index.html' },
       { name => 'Project Plan', icon => 'list', uri => "/pages/project.html" },
-      { name => 'Time Log', icon => 'watch', uri => "/pages/timelog.html" }
+      { name => 'Earthquakes!', icon => 'table_chart', uri => "/pages/quakes.html" },
     );
 </%perl>
 
+<%def .nav_item>
+<%args>
+$uri
+$icon
+$name
+</%args>
+
+<a class="mdl-navigation__link" href=" <% $uri %>">
+  <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">
+    <% $icon %>
+  </i>
+  <% $name %>
+</a>
+</%def>
 
 
 % foreach my $item (@items) {
-  <& ./nav_item.mhtml, %{$item} &>
+  <& .nav_item, %{$item} &>
 % }
 
 <div class="mdl-layout-spacer"></div>

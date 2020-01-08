@@ -1,6 +1,8 @@
 package Demo::Form;
 
+use common::sense;
 use Moose;
+use namespace::autoclean;
 
 extends 'HTML::FormHandler';
 
@@ -15,6 +17,7 @@ sub DBH {
   return Demo::Schema->instance();
 }
 
-no HTML::FormHandler::Moose;
+__PACKAGE__->meta->make_immutable;
+
 
 1;  # feed me Seymore!

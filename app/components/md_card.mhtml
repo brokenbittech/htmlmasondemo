@@ -32,6 +32,7 @@ $list
 % foreach my $item ( @{$list} ) {
 <& .checkboxitem, %{$item} &>
 % }
+</div>
 </%def>
 
 
@@ -94,5 +95,4 @@ my $ttid         = Digest::MD5::md5($name);
 % };    # end if actions
 
 
-  </div>
 </div>

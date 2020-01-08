@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
+  <& /components/htmlheader.mhtml &>
+  <& /components/body.mhtml &>
+</html>

@@ -13,12 +13,6 @@ services:
     volumes:
       - ./public_html/:/var/www/
       - ./nginx.conf.d/:/etc/nginx/conf.d/
-    logging:
-      driver: awslogs
-      options:
-        awslogs-group: tutorial
-        awslogs-region: us-west-2
-        awslogs-stream-prefix: web
   app:
     build:
       context: .

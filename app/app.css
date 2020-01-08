@@ -1,0 +1,11 @@
+<%once>
+# use only during development when not using a reverse proxy gateway
+use File::Slurp;
+my $css = File::Slurp::read_file('./public_html/app.css');
+</%once>
+
+<%perl>
+  $r->content_type('text/css');
+</%perl>
+
+<% $css %>
