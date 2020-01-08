@@ -1,7 +1,6 @@
 <%once>
-  use LWP::JSON::Tiny;
+use LWP::JSON::Tiny;
 </%once>
-
 
 <%perl>
   my $apiurl = 'http://api.icndb.com/jokes/random/?limitTo=nerdy';
@@ -15,4 +14,5 @@
     : 'Chuck Norris joke goes here, but the API was drop kicked too many times and it failed';
 
 </%perl>
+
 <% $chuck_norris %>

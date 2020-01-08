@@ -11,5 +11,8 @@ RUN carton install
 RUN apt remove build-essential -y
 
 COPY . /htmlmasondemo
+
+RUN carton exec util/get_database.pl
+
 ENTRYPOINT [ "./run.sh" ]
 EXPOSE 3001

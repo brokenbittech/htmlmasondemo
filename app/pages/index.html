@@ -1,52 +1,50 @@
 <%perl>
   my @cards = (
-      { title => '<img src="https://orly-appstore.herokuapp.com/generate?title=HTML%3A%3AMason&top_text=Demonstration%20project%20for%20WebCDR&author=Lowell%20Hamilton&image_code=16&theme=12&guide_text=A%20learning%20adventure&guide_text_placement=bottom_right" height="400"/>'
-          , content => ['A demonstration project for WebCDR by Lowell Hamilton']
-          , color => 'teal'
-          , width => 4
-          , type  => 'bighead'
-          , actions =>
-            [ { url => '/pages/project.html'
-                  , icon => 'book'
-                  , text => 'Read More'
+      { title => '<img src="https://orly-appstore.herokuapp.com/generate?title=HTML%3A%3AMason&top_text=Demonstration%20project%20for%20WebCDR&author=Lowell%20Hamilton&image_code=16&theme=12&guide_text=A%20learning%20adventure&guide_text_placement=bottom_right" height="400"/>',
+          content => ['A demonstration project for WebCDR by Lowell Hamilton'],
+          color   => 'teal',
+          width   => 4,
+          type    => 'bighead',
+          actions =>,
+          [ { url => '/pages/project.html',
+                  icon => 'book',
+                  text => 'Read More'
+              },
+              { url => 'https://www.github.com/brokenbittech/htmlmasondemo',
+                  icon => 'code',
+                  text => 'GitHub Repo'
+              },
+              { url => '/pages/contact.html',
+                  icon => 'email',
+                  text => 'Contact'
               }
-              , { url => 'https://www.github.com/brokenbittech/htmlmasondemo'
-                  , icon => 'code',
-                  , text => 'GitHub Repo'
-              }
-              , { url => '/pages/contact.html'
-                  , icon => 'email',
-                  , text => 'Contact'
-              }
-            ]
+          ]
       },
-      { title => 'Features!'
-          , color => 'blue-grey'
-          , type => 'checkboxlist'
-          , width => 6,
-          , content =>
-            [ { complete => 1
-                  , name => 'Built in HTML::Mason with reusable components'
-              }
-              , { complete => 1
-                  , name    => 'Random Chuck Norris quotes from an API'
-              }
-              , { complete => 1
-                  , name => 'Random robot avatar'
-              }
-              , { complete => 1
-                  , name => 'A shakey database-driven page'
-              }
-              , { complete => 1
-                  , name => 'Containerized in Docker and deployed to AWS ECS/Fargate'
+      { title => 'Features!',
+          color => 'blue-grey',
+          type  => 'checkboxlist',
+          width => 6,
+          content =>
+            [ { complete => 1,
+                  name => 'Built in HTML::Mason with reusable components'
+              },
+              { complete => 1,
+                  name => 'Random Chuck Norris quotes from an API'
+              },
+              { complete => 1,
+                  name => 'Random robot avatar'
+              },
+              { complete => 1,
+                  name => 'A shakey database-driven page'
+              },
+              { complete => 1,
+                  name => 'Containerized in Docker and deployed to AWS ECS/Fargate'
               }
             ]
       }
-
   );
 
 </%perl>
-
 
 <div class="demo-cards mdl-grid">
 % foreach my $card (@cards) {

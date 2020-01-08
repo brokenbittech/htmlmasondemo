@@ -2,9 +2,13 @@
 my $db = Demo::Schema->get_connection();
 my $rs = $db->resultset('quakes')->search(
     \["CAST(year as INTEGER) > 2010"],
-    { order_by => ['I_D ASC'], rows => 100 }
+    { order_by => ['YEAR ASC'], rows => 100 }
 );
+
+# picked a few columns from the data set
 my @headers = qw/YEAR MONTH DAY INTENSITY COUNTRY STATE /;
+
+# gather the data in a way that the grid component expects
 my @data;
 while ( my $row = $rs->next() ) {
     my @rowdata = map( $row->get_column($_), @headers );
@@ -12,6 +16,6 @@ while ( my $row = $rs->next() ) {
 }
 </%init>
 
-<h2>Earthquakes! </h2>
+<h2>Earthquakes!</h2>
 
 <& /components/grid.mhtml, header => \@headers, data => \@data &>

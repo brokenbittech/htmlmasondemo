@@ -15,12 +15,13 @@ use Scalar::Util;
 </%args>
 
 <thead>
-    <tr>
+  <tr>
 % foreach my $col (@cols) {
-      <th class="mdl-data-table__cell--non-numeric"><% $col %></th>
+    <th class="mdl-data-table__cell--non-numeric"><% $col %></th>
 % }
-    </tr>
-  </thead>
+  </tr>
+</thead>
+
 </%def>
 
 
@@ -30,7 +31,6 @@ use Scalar::Util;
 @data
 </%args>
 % foreach my $cell (@data) {
-%
   <td class="mdl-data-table__cell<% Scalar::Util::looks_like_number($cell) ? '' : '--non-numeric' %>"><% $cell %></td>
 % }
 </%def>
@@ -41,7 +41,7 @@ use Scalar::Util;
 <& .head, cols => \@header &>
 
 % foreach my $row (@data) {
-<tr>
+  <tr>
 <& .row, data => $row &>
-</tr>
+  </tr>
 % }
