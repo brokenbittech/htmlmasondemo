@@ -2,5 +2,8 @@
 
 ## Installation instructions
 - Clone repo
-- <docker-compose up>
+- docker-compose up
 - Service will be listening on <https://localhost:80>
+
+## Developer mode
+- just execute ./run.sh in the console
